@@ -1,5 +1,3 @@
-import 'package:fordev/domain/entities/account_entity.dart';
-
 import '../../domain/usecases/usecases.dart';
 
 import '../http/http.dart';
