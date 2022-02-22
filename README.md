@@ -1,5 +1,5 @@
 # Curso Flutter, TDD, Clean Architecture, SOLID e Design Patterns
 
-Repositório para que eu possa melhoras minha habilidades não só em desenvolvimento, mas também em versionamento de código.
+Repositório para o curso de Flutter que estou fazendo.
 
-Link para o curso que estou fazendo: [Curso](https://www.udemy.com/course/flutter-com-mango/)
+Link para o curso: [Udemy - Flutter com Mango](https://www.udemy.com/course/flutter-com-mango/)
