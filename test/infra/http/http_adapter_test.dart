@@ -1,29 +1,9 @@
-import 'dart:convert';
 import 'package:test/test.dart';
-import 'package:meta/meta.dart';
 import 'package:faker/faker.dart';
 import 'package:http/http.dart';
 import 'package:mockito/mockito.dart';
 
-import 'package:fordev/data/http/http.dart';
-
-class HttpAdapter implements HttpClient {
-  final Client client;
-
-  HttpAdapter(this.client);
-
-  Future<Map> request({@required String url, @required String method, Map body}) async {
-    final headers = {'content-type': 'aplication/json', 'accept': 'aplication/json'};
-    final jsonBody = body != null ? jsonEncode(body) : null;
-    final response = await client.post(url, headers: headers, body: jsonBody);
-    if (response.statusCode == 200) {
-      print(response.statusCode);
-      return response.body.isEmpty ? null : jsonDecode(response.body);
-    } else {
-      return null;
-    }
-  }
-}
+import 'package:fordev/ifra/http/http.dart';
 
 class ClientSpy extends Mock implements Client {}
 
@@ -38,6 +18,7 @@ void main() {
   });
   group('post', () {
     PostExpectation mockRequest() => when(client.post(any, body: anyNamed('body'), headers: anyNamed('headers')));
+
     void mockResponse(int statusCode, {String body = '{"any_key":"any_value"}'}) {
       mockRequest().thenAnswer((_) async => Response(body, statusCode));
     }
