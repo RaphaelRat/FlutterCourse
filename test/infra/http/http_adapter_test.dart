@@ -16,7 +16,12 @@ class HttpAdapter implements HttpClient {
     final headers = {'content-type': 'aplication/json', 'accept': 'aplication/json'};
     final jsonBody = body != null ? jsonEncode(body) : null;
     final response = await client.post(url, headers: headers, body: jsonBody);
-    return response.body.isEmpty ? null : jsonDecode(response.body);
+    if (response.statusCode == 200) {
+      print(response.statusCode);
+      return response.body.isEmpty ? null : jsonDecode(response.body);
+    } else {
+      return null;
+    }
   }
 }
 
@@ -34,12 +39,10 @@ void main() {
   group('post', () {
     PostExpectation mockRequest() => when(client.post(any, body: anyNamed('body'), headers: anyNamed('headers')));
     void mockResponse(int statusCode, {String body = '{"any_key":"any_value"}'}) {
-      mockRequest().thenAnswer((_) async => Response(body, 200));
+      mockRequest().thenAnswer((_) async => Response(body, statusCode));
     }
 
-    setUp(() {
-      mockResponse(200);
-    });
+    setUp(() => mockResponse(200));
     test('Should call post with correct values', () async {
       await sut.request(url: url, method: 'post', body: {'any_key': 'any_value'});
 
@@ -67,6 +70,13 @@ void main() {
 
     test('Should return null if post returns 204', () async {
       mockResponse(204, body: '');
+      final response = await sut.request(url: url, method: 'post');
+
+      expect(response, null);
+    });
+
+    test('Should return null if post returns 204', () async {
+      mockResponse(300);
       final response = await sut.request(url: url, method: 'post');
 
       expect(response, null);
