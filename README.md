@@ -1,11 +1,13 @@
 
 # FlutterCourse
-##Curso Flutter, TDD, Clean Architecture, SOLID e Design Patterns
+
+## Curso Flutter, TDD, Clean Architecture, SOLID e Design Patterns
+
 **Repositório para o curso que estou fazendo.**
 
-*Para funcionar atualmente, é preciso utilizar o Flutter na versão 1.20.2.
+* Para funcionar atualmente, é preciso utilizar o Flutter na versão 1.20.2.
 
-*Para o gerenciamento da versão do Flutter, estou utilizando o [**FVM**](https://fvm.app/).
+* Para o gerenciamento da versão do Flutter, estou utilizando o [**FVM**](https://fvm.app/).
 
 > <b>Status: 15% concluído 🟩🟥🟥🟥🟥🟥 </b>
 
