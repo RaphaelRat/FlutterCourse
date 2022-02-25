@@ -35,7 +35,7 @@ void main() {
     expect(button.onPressed, null);
   });
 
-  testWidgets('Should load with correct initial state', (WidgetTester tester) async {
+  testWidgets('Should call validate with correct values', (WidgetTester tester) async {
     await loadPage(tester);
 
     final email = faker.internet.email();
