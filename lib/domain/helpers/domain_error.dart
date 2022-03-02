@@ -7,7 +7,7 @@ extension DomainErrorExtension on DomainError {
         return 'Credenciais inválidas.';
 
       default:
-        return '';
+        return 'Algo errado aconteceu. Tente novamente em breve.';
     }
   }
 }
