@@ -9,7 +9,10 @@
 
 * Para o gerenciamento da versão do Flutter, estou utilizando o [**FVM**](https://fvm.app/).
 
-> <b>Status: 15% concluído 🟩🟥🟥🟥🟥🟥 </b>
+ <b>Status do curso:  </b>
+
+   
+![](https://progress-bar.dev/18/?width=115)
 
 ---
 
