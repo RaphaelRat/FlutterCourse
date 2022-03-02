@@ -14,7 +14,8 @@ class StreamLoginPresenter {
 
   var _state = LoginState();
 
-  Stream<String> get emailErrorStream => _controller.stream.map((state) => state.emailError);
+  Stream<String> get emailErrorStream =>
+      _controller.stream.map((state) => state.emailError).distinct(); // Distinct não emite 2 valores seguidos iguais
 
   StreamLoginPresenter({@required this.validation});
 
