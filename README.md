@@ -5,14 +5,14 @@
 
 **Repositório para o curso que estou fazendo.**
 
-* Para funcionar atualmente, é preciso utilizar o Flutter na versão 1.20.2.
+* Para funcionar atualmente, é preciso utilizar o Flutter na versão 1.20.4.
 
 * Para o gerenciamento da versão do Flutter, estou utilizando o [**FVM**](https://fvm.app/).
 
  <b>Status do curso:  </b>
 
    
-![](https://progress-bar.dev/18/?width=115)
+![](https://progress-bar.dev/22/?width=115)
 
 ---
 
