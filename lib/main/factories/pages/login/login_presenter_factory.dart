@@ -7,5 +7,6 @@ LoginPresenter makeStreamLoginPresenter() {
 }
 
 LoginPresenter makeGetxLoginPresenter() {
-  return StreamLoginPresenter(authentication: makeRemoteAuthentication(), validation: makeLoginValidation());
+  return GetxLoginPresenter(
+      authentication: makeRemoteAuthentication(), validation: makeLoginValidation(), saveCurrentAccount: makeLocalSaveCurrentAccount());
 }
