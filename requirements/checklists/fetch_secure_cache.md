@@ -7,5 +7,5 @@
 
 ## Exceção - Erro ao carregar os dados do cache seguro
 
-1. Deve repassaraexceção para quem chamou essa classe
+1. ✔ Deve repassaraexceção para quem chamou essa classe
           
