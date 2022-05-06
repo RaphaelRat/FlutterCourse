@@ -12,7 +12,7 @@
  <b>Status do curso:  </b>
 
    
-![](https://progress-bar.dev/26/?width=115)
+![](https://progress-bar.dev/30/?width=115)
 
 ---
 
