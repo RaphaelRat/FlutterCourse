@@ -30,14 +30,14 @@ void main() {
     mockLoadCurrentAccount(account: AccountEntity(faker.guid.guid()));
   });
   test('Should call LoadCurrentAccount', () async {
-    await sut.checkAccount();
+    await sut.checkAccount(durationInSeconds: 0);
     verify(loadcurrentAccount.load()).called(1);
   });
 
   test('Should go surveys page on success', () async {
     sut.navigateToStream.listen(expectAsync1((page) => expect(page, '/surveys')));
 
-    await sut.checkAccount();
+    await sut.checkAccount(durationInSeconds: 0);
   });
 
   test('Should go login page on null result', () async {
@@ -45,7 +45,7 @@ void main() {
 
     sut.navigateToStream.listen(expectAsync1((page) => expect(page, '/login')));
 
-    await sut.checkAccount();
+    await sut.checkAccount(durationInSeconds: 0);
   });
 
   test('Should go login page on error', () async {
@@ -53,6 +53,6 @@ void main() {
 
     sut.navigateToStream.listen(expectAsync1((page) => expect(page, '/login')));
 
-    await sut.checkAccount();
+    await sut.checkAccount(durationInSeconds: 0);
   });
 }
