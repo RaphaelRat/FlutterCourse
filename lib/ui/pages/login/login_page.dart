@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
-import '../../pages/pages.dart';
 import '../../components/components.dart';
+import './login.dart';
 import 'components/components.dart';
 
 class LoginPage extends StatelessWidget {
