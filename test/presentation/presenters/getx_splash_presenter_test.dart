@@ -23,10 +23,13 @@ class GetxSplashPresenter implements SplashPresenter {
 class LoadCurrentAccountSpy extends Mock implements LoadCurrentAccount {}
 
 void main() {
+  LoadCurrentAccountSpy loadcurrentAccount;
+  GetxSplashPresenter sut;
+  setUp(() {
+    loadcurrentAccount = LoadCurrentAccountSpy();
+    sut = GetxSplashPresenter(loadCurrentAccount: loadcurrentAccount);
+  });
   test('Should call LoadCurrentAccount', () async {
-    final loadcurrentAccount = LoadCurrentAccountSpy();
-    final sut = GetxSplashPresenter(loadCurrentAccount: loadcurrentAccount);
-
     await sut.checkAccount();
     verify(loadcurrentAccount.load()).called(1);
   });
