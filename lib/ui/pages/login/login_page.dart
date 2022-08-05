@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:fordev/utils/i18n/resources.dart';
+
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
+import '../../../utils/i18n/resources.dart';
+
 import '../../components/components.dart';
+import '../../helpers/errors/errors.dart';
+
 import './login.dart';
 import 'components/components.dart';
 
@@ -32,9 +36,9 @@ class LoginPage extends StatelessWidget {
             }
           });
 
-          presenter.mainErrorStream.listen((error) {
+          presenter.mainErrorStream.listen((UIError error) {
             if (error != null) {
-              showErrorMessage(context, error);
+              showErrorMessage(context, error.description);
             }
           });
 
